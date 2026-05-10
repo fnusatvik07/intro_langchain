@@ -15,11 +15,20 @@ Each notebook builds on the previous one. Run them in order the first time.
 
 ## Setup
 
+This project uses [`uv`](https://docs.astral.sh/uv/) for environment and dependency management. If you do not have it yet:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then:
+
 ```bash
 git clone https://github.com/fnusatvik07/intro_langchain.git
 cd intro_langchain
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
 cp .env.example .env
 # edit .env and add at least one provider key
 ```
