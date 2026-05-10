@@ -13,84 +13,88 @@
           <mxGeometry x="40" y="64" width="1520" height="36" as="geometry" />
         </mxCell>
 
-        <mxCell id="walllbl" value="&lt;b&gt;Context window limit&lt;/b&gt;   (example: GPT-4 Turbo = 128,000 tokens. Claude = 200,000. Gemini = 1,000,000.)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="130" width="900" height="22" as="geometry" />
+        <mxCell id="walllbl" value="&lt;b&gt;Context window limit&lt;/b&gt;   (example values: GPT-4 Turbo = 128,000 tokens.   Claude = 200,000.   Gemini = 1,000,000.)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="118" width="1100" height="22" as="geometry" />
         </mxCell>
         <mxCell id="wall" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#b85450;strokeWidth=3;dashed=1;dashPattern=8 4;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="80" y="160" as="sourcePoint" />
-            <mxPoint x="1180" y="160" as="targetPoint" />
+            <mxPoint x="80" y="155" as="sourcePoint" />
+            <mxPoint x="1180" y="155" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="walltag" value="HARD CEILING - request fails above this line" style="text;html=1;align=right;verticalAlign=middle;fontSize=11;fontColor=#b85450;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="780" y="138" width="400" height="20" as="geometry" />
+        <mxCell id="walltag" value="HARD CEILING - any request whose total tokens cross this line is rejected by the API" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#b85450;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="1100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="walltagY" value="128k" style="text;html=1;align=right;verticalAlign=middle;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="146" width="50" height="20" as="geometry" />
         </mxCell>
 
         <mxCell id="bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#5d8a47;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="100" y="660" width="160" height="50" as="geometry" />
+          <mxGeometry x="100" y="673" width="160" height="27" as="geometry" />
         </mxCell>
-        <mxCell id="bar1lbl" value="Turn 1&#xa;~500 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
+        <mxCell id="bar1cost" value="cost: $0.0001" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="100" y="649" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="bar1lbl" value="&lt;b&gt;Turn 1&lt;/b&gt;&#xa;~500 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="100" y="715" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="bar1cost" value="cost: $0.0001" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="100" y="640" width="160" height="18" as="geometry" />
         </mxCell>
 
         <mxCell id="bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#5d8a47;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="320" y="600" width="160" height="110" as="geometry" />
+          <mxGeometry x="320" y="634" width="160" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="bar2lbl" value="Turn 5&#xa;~4,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
+        <mxCell id="bar2cost" value="cost: $0.001" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="610" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="bar2lbl" value="&lt;b&gt;Turn 5&lt;/b&gt;&#xa;~4,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="320" y="715" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="bar2cost" value="cost: $0.001" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="320" y="580" width="160" height="18" as="geometry" />
         </mxCell>
 
         <mxCell id="bar3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#a08938;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="540" y="450" width="160" height="260" as="geometry" />
+          <mxGeometry x="540" y="562" width="160" height="138" as="geometry" />
         </mxCell>
-        <mxCell id="bar3lbl" value="Turn 20&#xa;~25,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
+        <mxCell id="bar3cost" value="cost: $0.006&#xa;quality: still fine" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="540" y="528" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bar3lbl" value="&lt;b&gt;Turn 20&lt;/b&gt;&#xa;~25,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="540" y="715" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="bar3cost" value="cost: $0.006&#xa;quality: still fine" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="540" y="420" width="160" height="28" as="geometry" />
         </mxCell>
 
         <mxCell id="bar4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d79b00;strokeColor=#a06a00;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="760" y="240" width="160" height="470" as="geometry" />
+          <mxGeometry x="760" y="315" width="160" height="385" as="geometry" />
         </mxCell>
-        <mxCell id="bar4lbl" value="Turn 60&#xa;~90,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
+        <mxCell id="bar4cost" value="cost: $0.022&#xa;quality: lost-in-the-middle risk rising" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="740" y="280" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bar4lbl" value="&lt;b&gt;Turn 60&lt;/b&gt;&#xa;~90,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="760" y="715" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="bar4cost" value="cost: $0.022&#xa;quality: lost-in-the-middle" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="760" y="210" width="160" height="28" as="geometry" />
         </mxCell>
 
         <mxCell id="bar5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#8a3e3a;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="980" y="160" width="160" height="550" as="geometry" />
+          <mxGeometry x="980" y="160" width="160" height="540" as="geometry" />
         </mxCell>
-        <mxCell id="bar5lbl" value="Turn 80&#xa;~128,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="bar5cost" value="API ERROR&#xa;context_length_exceeded" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="190" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bar5cost2" value="bundle hits the wall;&#xa;you cannot send this request" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="980" y="240" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bar5lbl" value="&lt;b&gt;Turn 80&lt;/b&gt;&#xa;~128,000 tokens" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="980" y="715" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="bar5cost" value="API ERROR&#xa;context_length_exceeded" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="130" width="160" height="28" as="geometry" />
         </mxCell>
 
         <mxCell id="baseline" value="" style="endArrow=none;html=1;strokeColor=#999999;strokeWidth=2;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="80" y="710" as="sourcePoint" />
-            <mxPoint x="1180" y="710" as="targetPoint" />
+            <mxPoint x="80" y="700" as="sourcePoint" />
+            <mxPoint x="1180" y="700" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="basetag" value="0 tokens" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
-          <mxGeometry x="20" y="700" width="60" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="walltagY" value="128k" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="20" y="150" width="60" height="20" as="geometry" />
+        <mxCell id="basetag" value="0 tokens" style="text;html=1;align=right;verticalAlign=middle;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="20" y="690" width="50" height="20" as="geometry" />
         </mxCell>
 
         <mxCell id="cons" value="&lt;b&gt;Three things grow with each turn&lt;/b&gt;&#xa;&#xa;&lt;b&gt;1) Cost.&lt;/b&gt;  Most providers price by input tokens. Re-sending Turn 1&#x2019;s message at Turn 80 means you pay for it 80 times.&#xa;&#xa;&lt;b&gt;2) Latency.&lt;/b&gt;  Longer prompts = longer time-to-first-token. A 100k-token prompt can add 5-15 seconds before any answer starts.&#xa;&#xa;&lt;b&gt;3) Quality risk.&lt;/b&gt;  Even when you stay under the wall, models tend to forget content stuck in the middle of very long prompts. This is the &quot;lost in the middle&quot; effect: relevant info gets diluted." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;verticalAlign=top;spacing=14;" vertex="1" parent="1">
-          <mxGeometry x="1220" y="160" width="340" height="540" as="geometry" />
+          <mxGeometry x="1220" y="200" width="340" height="500" as="geometry" />
         </mxCell>
 
         <mxCell id="caption" value="&lt;b&gt;The takeaway.&lt;/b&gt;  Naive append-everything chat works fine for short conversations and breaks for long ones. Long-running assistants need a strategy for keeping the message list bounded. That is what diagram 4 is about: clearing, summarizing, hybrid windows, and retrieval." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;verticalAlign=top;spacing=14;" vertex="1" parent="1">
