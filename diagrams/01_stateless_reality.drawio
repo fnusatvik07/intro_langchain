@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="29.7.9">
+  <diagram name="1 - Stateless reality">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="1. The truth: an LLM call is stateless" style="text;html=1;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#1f3b73;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Every API call is independent. After it returns, the model retains nothing. To prove it, watch what happens when we make two separate calls in a row." style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="64" width="1320" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c1lbl" value="API Call #1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1f3b73;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c1in" value="&lt;b&gt;Input you send&lt;/b&gt;&#xa;&#xa;[&#xa;  HumanMessage(&#xa;    &quot;My name is Sam.&quot;&#xa;  )&#xa;]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="156" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c1llm" value="&lt;b&gt;LLM&lt;/b&gt;&#xa;&#xa;single forward pass&#xa;&#xa;sees only what you&#xa;sent in this call" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="540" y="156" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c1out" value="&lt;b&gt;Output returned&lt;/b&gt;&#xa;&#xa;AIMessage(&#xa;  &quot;Nice to meet&#xa;   you, Sam!&quot;&#xa;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="960" y="156" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c1e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c1in" target="c1llm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c1e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c1llm" target="c1out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gap" value="&#x21E3;  Call #1 has fully returned. Model retains nothing. App makes a brand new, independent call.  &#x21E3;" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=2;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="80" y="346" width="1200" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c2lbl" value="API Call #2 (a few seconds later, same API key, same model)" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1f3b73;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c2in" value="&lt;b&gt;Input you send&lt;/b&gt;&#xa;&#xa;[&#xa;  HumanMessage(&#xa;    &quot;What is my name?&quot;&#xa;  )&#xa;]&#xa;&#xa;&lt;font color=&quot;#b85450&quot;&gt;notice: nothing about Sam&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="436" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c2llm" value="&lt;b&gt;LLM&lt;/b&gt;&#xa;&#xa;different forward&#xa;pass, fresh state&#xa;&#xa;has no idea Call #1&#xa;ever happened" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="540" y="436" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c2out" value="&lt;b&gt;Output returned&lt;/b&gt;&#xa;&#xa;AIMessage(&#xa;  &quot;I do not know&#xa;   your name. Could&#xa;   you tell me?&quot;&#xa;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="960" y="436" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c2e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c2in" target="c2llm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c2llm" target="c2out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="caption" value="&lt;b&gt;Why this matters.&lt;/b&gt;&#xa;A chat model is a pure function: messages in, AIMessage out. No hidden memory. No session.&#xa;&#xa;If you want the model to act like it remembers Sam from Call #1, then in Call #2 you must INCLUDE that earlier message in your input.&#xa;That is the whole trick of chat. The next diagram shows it." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;align=left;verticalAlign=top;spacing=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1240" height="160" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

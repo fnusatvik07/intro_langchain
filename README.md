@@ -13,6 +13,17 @@ The goal is not to memorize the API. It is to build the right mental model so th
 
 Each notebook builds on the previous one. Run them in order the first time.
 
+## Diagrams
+
+The `diagrams/` folder has four `.drawio` files that explain how chat with an LLM actually works under the hood. Open them in [draw.io](https://app.diagrams.net/) (or the VS Code draw.io extension).
+
+1. **`01_stateless_reality.drawio`** - one LLM call is fully stateless. Two back-to-back calls prove the model retains nothing between them.
+2. **`02_chat_illusion_multiturn.drawio`** - how the chat illusion is built. Three turns side by side, with the message bundle growing each turn while the model itself stays stateless.
+3. **`03_context_window_fills_up.drawio`** - why the bundle growing matters. Cost, latency, and the hard ceiling at the model's context window.
+4. **`04_context_strategies.drawio`** - four ways production apps keep the bundle bounded: truncation, summarization, hybrid (summary + recent N), and vector retrieval.
+
+If you only have time for one, read diagram 2. The whole rest of LangChain makes more sense once you see that picture.
+
 ## Setup
 
 This project uses [`uv`](https://docs.astral.sh/uv/) for environment and dependency management. If you do not have it yet:
